@@ -40,7 +40,7 @@ Looking at history for an authorf for a specified duration
 git log --shortstat --pretty --author=jima --since=2.weeks
 ```
 
-### Patches
+#### Patches
 
 Generating a patch from a specific commit
 
