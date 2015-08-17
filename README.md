@@ -60,5 +60,25 @@ A mini cheart sheet on git tafg
 
 * https://ariejan.net/2009/09/05/git-tag-mini-cheat-sheet-revisited/
 
+#### Retrieving a previously deleted file.
+
+First we need to find the relevant commit
+
+```
+git ls
+```
+
+and then we can show the files in the commit 
+
+```
+git show-files-in-commit sha1
+```
+
+and finally we need to restore it. You cna use the short or the long sh1
+
+```
+git checkout 8561477^ -- lib/email.js
+```
+
 
 

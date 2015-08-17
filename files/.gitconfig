@@ -1,3 +1,16 @@
+[user]
+	name = Jim Alateras
+	email = jima@comware.com.au
+	signingkey = 2D959C7B
+[core]
+	editor = mate -w
+	excludesfile = /Users/jima/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 [alias]
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
@@ -24,7 +37,7 @@
   cl = clone
   ci = commit
   co = checkout
-  br = branch 
+  br = branch
   diff = diff --word-diff
   dc = diff --cached
   r = reset
@@ -41,6 +54,10 @@
   pstat = diff --stat origin/master HEAD
   lastdiff = diff HEAD^ HEAD
   not-pushed = log --branches --not --remotes
+  delete-last-commit = reset --soft HEAD~1
+  delete-local-branch = branch -d
+  tracked-files = ls-tree -r master --name-only
+	show-files-in-commit = "!f() { git show --name-only --pretty=\"format:\" "$1"; }; f"
   
 [push]
 	default = current
